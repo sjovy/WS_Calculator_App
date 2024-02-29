@@ -14,10 +14,15 @@ public class App
 
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Enter first number: ");
-            num1 = scanner.nextDouble();
-            System.out.println("Enter second number: ");
-            num2 = scanner.nextDouble();
+            try {
+                System.out.println("Enter first number: ");
+                num1 = scanner.nextDouble();
+                System.out.println("Enter second number: ");
+                num2 = scanner.nextDouble();
+            } catch (Exception e) {
+                System.out.println("Invalid input, use comma as decimal separator. ");
+                return;
+            }
             System.out.println("Select mathematical operation 1-4): ");
             System.out.println("1 = Addition: ");
             System.out.println("2 = Subtraction: ");
@@ -38,29 +43,16 @@ public class App
                     res = (num1 / num2);
                     break;
                 default:
-                    System.out.println("N/A");
+                    System.out.println("Invalid input, only numbers 1 - 4 allowed.");
+                    return;
             }
-            //if (num3 == 1) {
-            //    res = num1 + num2;
-            //} else if (num3 == 2) {
-            //    res = num1 - num2;
-            //} else if (num3 == 3) {
-            //    res = num1 * num2;
-            //} else if (num3 == 4) {
-            //    res = num1 / num2;
-            //} else {
-            //    System.out.println("N/A");
-            //}
 
             System.out.println(res);
             System.out.println("Press \"Y\" to continue or any to exit: ");
             choice = scanner.next().charAt(0);
             }   while (choice == 'Y' || choice == 'y');
 
-
+        scanner.close();
     }
-
-
-
 
 }
