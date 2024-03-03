@@ -1,8 +1,11 @@
 package se.lexicon;
 
 import java.util.Scanner;
+/*
+All in one method. Including loop for continued use
+ */
 
-public class App 
+public class App
 {
 
     public static void main( String[] args )
@@ -50,7 +53,7 @@ public class App
             System.out.println(res);
             System.out.println("Press \"Y\" to continue or any to exit: ");
             choice = scanner.next().charAt(0);
-            }   while (choice == 'Y' || choice == 'y');
+        }   while (choice == 'Y' || choice == 'y');
 
         scanner.close();
     }
